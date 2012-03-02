@@ -1,0 +1,4 @@
+This is a simple tool for finding and extracting Internet Explorer session restore data from the binary restore files. It is currently pre-alpha.
+
+Dependencies:
+OleFileIO - http://www.decalage.info/python/olefileio

@@ -17,13 +17,10 @@ def readFile(inFile):
         print 'File is NOT an OLE'
     return ole
 
-### Check to see if "data" is within our defined set of uppercase, lowercase, numbers, ':', '.', and '/'
+### Check to see if "data" is within our defined set of printable ascii characters
 def isChar(data):
-    allowed = set(string.ascii_lowercase + string.ascii_uppercase + ":./0123456789")
-    if set(data) <= allowed:
-        return True
-    else:
-        return False
+    allowed = set(string.letters + string.punctuation)
+    return set(data) <= allowed
 
 ### Print the ACII characters of a recovery *.dat file
 def printFile(ole):
@@ -31,11 +28,14 @@ def printFile(ole):
         print stream
         streamData = ole.openstream(stream)
         binaryData = streamData.read()
-        url = ''
+        printableData = ''
         for possibleChar in binaryData:
             if isChar(possibleChar):
-                url += possibleChar
-        print url
+                printableData += possibleChar
+        urlList = printableData.split("http")
+        for urls in urlList:
+            if urls != '':
+                print 'http' + urls
 
 ### Locate all of the Internet Explorer recovery files on the hard drive where this script is run, return them as a list      
 def findFiles():

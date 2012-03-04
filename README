@@ -1,4 +1,10 @@
-This is a simple tool for finding and extracting Internet Explorer session restore data from the binary restore files. It is currently pre-alpha.
+This is a simple tool for finding and extracting urls from Internet Explorer session restore data (binary restore files).
+Where 'Strings' fails, this tool succeeds. 
+
+Usage:
+python main.py -d [Abosute directory to search] -f [Filename of XML file to save]
+Called without arguments, it will search the drive of the current working directory for the standard IE recovery folder location and will output "IE_History.xml".
 
 Dependencies:
+Python 2.7.2 - http://python.org/download/releases/2.7.2/
 OleFileIO - http://www.decalage.info/python/olefileio

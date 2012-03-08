@@ -6,7 +6,7 @@ Usage:
 For use on Windows Vista or Windows 7.
 *Internet Explorer can not be open when this script is run; it will cause a permission error when reading the restore files.*
 
-python IE-Recovery-Data-Parser.py -d [Abosute directory to search] -f [Filename of XML file to save]
+python main.py -d [Abosute directory to search] -f [Filename of XML file to save]
 
 Called without arguments, it will search the drive of the current working directory for the standard IE recovery folder location and will output "IE_History.xml".
 Additionally, the without the -d argument, there will be a "User" field in the XML, which could be helpfull on a machine with many users.
